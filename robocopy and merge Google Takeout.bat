@@ -12,13 +12,15 @@ PAUSE
 echo.
 
 for /D %%g in (takeout-*) do (
-    Echo Merging the contents of %%g into the current directory.
-    robocopy /E /MOVE %%g . /log+:robocopy.log
+    echo Merging the contents of %%g into the current directory.
+    robocopy /E /MOVE %%g . /log+:robocopy-takeout.log
 )
 
 echo All folders have been merged into the current directory.
 echo Please ensure that all your files are present using the robocopy.log file
 echo that was generated in the current directory.
+echo Launching robocopy-takeout.log file
+start robocopy-takeout.log
 echo.
 echo Press any key to exit.
 echo.
